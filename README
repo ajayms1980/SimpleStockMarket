@@ -1,0 +1,45 @@
+SIMPLE STOCK MARKET (C++98)
+
+Notes:
+
+- You will need to provide CMAKE paths in CMakeLists.txt
+- Project_Area.JPG - Structure of All source and include files
+- SimpleStockMarket.pdf - Class Structure
+- Please note TradeID is created with <Sec since EPOCH + EPIC>. This is only for demonstration and lacks booking trades in microseconds.
+	In real scenario, you wouldn't like to do it. You will more robust ways like daycode + <Trade Sequence from Core Sequencer>
+
+
+Main.cpp
+- Main creates an object of StockMarketActivity which takes RefDataService, TradeService as input
+- You can then put orders in.
+- Sleep is to allow different Timestamp (More on this later)
+- getTradeData() will print all trade data.
+- getInstrumentRatio() will print all ratios like Div Yield, PE Ratio, VWAP and Index.
+- Destroying StockMarketActivity will clean up memory.
+
+StockMarketActivity
+- It will take pointer to RefDataService, TradeService and create a new Instrument Service
+- Main methos is newOrderIn which will take orders from Main
+- It will then validate and and call bookTrade from Trade Service
+- There are different helper functions to print Trades, refs , validate etc.
+
+
+RefDataService (InstrumentRefDataService,ReferenceDataMapping):
+- This Service logs Reference Data into map < epic, ReferenceDataMapping*> - RefDataMapping keeps details like div, type, par value
+- loadRefData() & loadRefData(epic,ReferenceDataMapping*> load this into map cache
+- recordExistForEpic checks if an epic exists & returns ref to that epic data
+- getRefData prints out all ref data
+
+
+TradeService (TradeService,TradeRecord):
+- Trade Service books Trade and logs them in Cache of Map of <Epic,Map of <TradeID,Pointer to TradeData (TradeRecord*)>>
+- getTradeData(epic) will return Trade Data related to an instrument.
+- getTradeData will print all Trade Data
+- Destroyer will delete them 
+- getlocaltime is to show time in Local Time format
+
+Instrument Service (InstrumentRatios)
+- This service will calculate all ratios like PE, div yield, VWAP and GBCE Index etc.
+
+StaticData is for Enums for BUY / SELL & DIV_TYPES
+CommonDefs is for typedefs for Caches.
