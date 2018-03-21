@@ -34,20 +34,12 @@ INCLUDE(CPack)
 set(DEBUG_CXX_FLAGS   "${COMMON_CXX} ${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 set(RELEASE_CXX_FLAGS "${COMMON_CXX} ${CMAKE_CXX_FLAGS_MINSIZEREL}")
 
-# Set the default library mode
-#set( LIB_MODE SHARED )
-
 SET ( ARCH ${CMAKE_SYSTEM_PROCESSOR} )
 MESSAGE( "******  Machine is : ${ARCH}" )
 
-   SET( SIMPLESTOCK "simplestockmarket" )
+SET( SIMPLESTOCK "simplestockmarket" )
 
-	include_directories(
-	./include
-  )
-
-   link_directories(
-  )
+include_directories( ./include	)
 
 SET( BASE_SRC 
 		src/main.cpp
@@ -64,13 +56,10 @@ SET( BASE_SRC
 
 # System Specific Libraries
 
-
 # System Specific Flags
 add_definitions( -O3 -Wall -Wno-sign-compare -Wno-unknown-pragmas -DUNIX=1 -D_XOPEN_SOURCE=500 -D_REENTRANT -D_THREAD_SAFE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -DVALGRIND_AWARE=1 -D_DEBUG=1  )
 
 
 add_executable( ${SIMPLESTOCK} ${BASE_SRC})
-
-target_link_libraries( ${SIMPLESTOCK} )
 
 
