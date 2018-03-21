@@ -3,12 +3,17 @@ SIMPLE STOCK MARKET (C++98)
 Notes:
 
 - You will need to provide CMAKE paths in CMakeLists.txt
+
 - Project_Area.JPG - Structure of All source and include files
+
 - SimpleStockMarket.pdf - Class Structure
+
 - Please note TradeID is created with <Sec since EPOCH + <Counter> + EPIC>. This is only for demonstration and lacks issues like Fixed Format Trade ID which is crucial for Indexing at DB level storage.
 	In real scenario, you wouldn't like to do it. You will more robust ways like daycode + <Trade Sequence from Core Sequencer> with a Fixed Format.
+	
 - Test_Results.txt demonstrates Output Run / Results. Please note that Rolling GBCE Index is same for all output because we are calculating Ratios after all trades have been booked. Code already takes care
   of calculating GBCE Index based on Time Interval (Set to Current Time to pick all trades).
+  
 - Changed PERatio calculation based on Dividend instead of Dividend Yield.
 
 Main.cpp
