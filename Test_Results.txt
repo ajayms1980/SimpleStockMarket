@@ -1,10 +1,10 @@
 	TRADES						Reference	Data			
-Epic	Quantity	Price	BuySell			Epic	Type	Last Div	Preffered Div	ParValue	
-ALE	2500	179	 NS::BUY			TEA	Common	0	0	100	
-ALE	200	185	 NS::SELL			POP	Common	8	0	100	
-ALE	400	164	 NS::BUY			ALE	Common	23	0	60	
-ALE	100	161	 NS::SELL			GIN	Preferred	8	2%	100	
-ALE	5000	172	 NS::BUY			JOE	Common	13	0	250	
+Epic	Quantity	Price	BuySell			Epic	Type		Last Div	Preffered Div		ParValue	
+ALE	2500	179	 NS::BUY			TEA	Common		0		0			100	
+ALE	200	185	 NS::SELL			POP	Common		8		0			100	
+ALE	400	164	 NS::BUY			ALE	Common		23		0			60	
+ALE	100	161	 NS::SELL			GIN	Preferred	8		2%			100	
+ALE	5000	172	 NS::BUY			JOE	Common		13		0			250	
 ALE	8000	159	 NS::SELL								
 							RESULTS			
 POP	500	240	 NS::BUY			========================================================================================
