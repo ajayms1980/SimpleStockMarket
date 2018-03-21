@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   ITradeService.h
  * Author: ajay.kumar
  *

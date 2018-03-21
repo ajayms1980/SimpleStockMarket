@@ -97,3 +97,4 @@ private:
 
 #endif	/* TRADERECORD_H */
 
+

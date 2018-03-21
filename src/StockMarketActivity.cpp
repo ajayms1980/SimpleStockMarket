@@ -63,17 +63,18 @@ bool StockMarketActivity::newOrderIn(const std::string& epic,
 
 	_tradeService->bookTrade(epic, quantity, price, bs_ind);
 
-	this->getInstrumentRatio(epic, price);
+	//this->getInstrumentRatio(epic, price);
 	return true;
 }
 
-void StockMarketActivity::getInstrumentRatio(const std::string& epic, double price)
+void StockMarketActivity::getInstrumentRatio(const std::string& epic, double price, int interval)
 {
-	std::cout << std::endl << "Instrument Numbers:" << std::endl;
-	std::cout << "Div Yield:" << _instrumentService->getDividendYield(epic, price) << std::endl;
-	std::cout << "PE Ratio:" << _instrumentService->getPERatio(epic, price) << std::endl;
-	std::cout << "Rolling VWAP:" << _instrumentService->getRollingVWAP(epic, price) << std::endl;
-	std::cout << "Instrument Numbers End." << std::endl << std::endl;
+	std::cout << "****************Rolling Instrument Ratios [" << epic << "] Price [" << price << "]"
+		<< "   Div Yield:" << _instrumentService->getDividendYield(epic, price)
+		<< "   PE Ratio:" << _instrumentService->getPERatio(epic, price)
+		<< "   Rolling VWAP:" << _instrumentService->getRollingVWAP(epic, interval)
+		<< "   Rolling GBCE Index: " << _instrumentService->getAllShareIndex(time(NULL))
+		<< std::endl << std::endl;
 }
 
 void StockMarketActivity::getAllRefData()

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   StockMarketActivity.h
  * Author: ajay.kumar
  *
@@ -29,7 +29,7 @@ public:
 
 	double getGBCEAllShareIndex(int interval);
 	void getEpicRefData(const std::string& epic);
-	void getInstrumentRatio(const std::string& epic, double price);
+	void getInstrumentRatio(const std::string& epic, double price, int interval);
 	void getAllRefData();
 	void getTradeData();
 	void getTradeData(const std::string& epic);

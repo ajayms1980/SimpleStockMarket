@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   TradeService.h
  * Author: ajay.kumar
  *
@@ -19,6 +19,7 @@ public:
 	TradeService();
 	virtual ~TradeService();
 
+	static int tradeIdCounter;
 	void bookTrade(const std::string& epic,
 		double quantity,
 		double price,

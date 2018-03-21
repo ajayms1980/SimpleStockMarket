@@ -42,3 +42,4 @@ typedef NS::DIV_TYPES DIV_TYPE;
 
 #endif	/* STATICDATA_H */
 
+

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   InstrumentRatios.h
  * Author: ajay.kumar
  *
@@ -22,6 +22,7 @@ public:
 	double getPERatio(const std::string& epic, double price);
 	double getRollingVWAP(const std::string& epic, int interval);
 	double getAllShareIndex(int interval);
+	double getDividend(const std::string& epic);
 
 
 private:

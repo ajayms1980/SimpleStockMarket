@@ -17,3 +17,4 @@ ReferenceDataMapping::ReferenceDataMapping (const std::string& epic,
 ReferenceDataMapping::~ReferenceDataMapping()
 {
 }
+

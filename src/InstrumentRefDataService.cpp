@@ -58,7 +58,7 @@ void InstrumentRefDataService::getRefData()
 	for (RefDataMap::const_iterator it = _refDataCache.begin(); it != _refDataCache.end(); it++)
 	{
 		ReferenceDataMapping* record = it->second;
-		std::cout << "RefData: Epic " << record->getEpic() << " " << (int) record->getType() << " " << record->getlastDividend() << " " << record->getfixedDividend() << " " << record->getparValue() << std::endl;
+		std::cout << "RefData: Epic " << record->getEpic() << " " << DivTypes[record->getType()] << " " << record->getlastDividend() << " " << record->getfixedDividend() << " " << record->getparValue() << std::endl;
 	}
 }
 

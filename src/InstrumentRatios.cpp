@@ -39,6 +39,22 @@ double InstrumentRatios::getDividendYield(const std::string& epic, double price)
 
 }
 
+double InstrumentRatios::getDividend(const std::string& epic)
+{
+	if (_refDataService->recordExistsForEpic(epic, _record))
+	{
+		if (_record->getType() == NS::COMMON)
+		{
+			return _record->getlastDividend();
+		}
+		else
+		{
+			return ((_record->getfixedDividend() * _record->getparValue())  / 100);
+		}
+	}
+	return 0;
+}
+
 double InstrumentRatios::getCommonDividendYield(double price)
 {
 	if (_record != NULL)
@@ -61,11 +77,11 @@ double InstrumentRatios::getPERatio(const std::string& epic, double price)
 {
 	if (this->validInputData(epic, price))
 	{
-		double divYield = this->getDividendYield(epic, price);
+		double dividend = this->getDividend(epic);
 
-		if (divYield)
+		if (dividend)
 		{
-			return (price / this->getDividendYield(epic, price));
+			return (price / dividend);
 		}
 	}
 	return 0;

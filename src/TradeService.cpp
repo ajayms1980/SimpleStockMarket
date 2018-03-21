@@ -1,10 +1,11 @@
-
 #include <time.h>
 
 #include "TradeService.h"
 #include <string.h>
 #include <algorithm>
 #include <map>
+
+int TradeService::tradeIdCounter = 0;
 
 TradeService::TradeService() : _tradeRecord(), _tradeCache(), _localTime(NULL)
 {
@@ -44,9 +45,10 @@ void TradeService::bookTrade(const std::string& epic,
 	BS_IND	bs_ind	)
 {
 	//Slow
+	++tradeIdCounter;
 	time_t now = time(0);
 	std::stringstream tradeId;
-	tradeId << now << epic;
+	tradeId << now << tradeIdCounter << epic;
 
 	this->getlocaltime(now);
 
@@ -60,7 +62,6 @@ void TradeService::bookTrade(const std::string& epic,
 
 bool TradeService::getTradeData()
 {
-	//std::cout << _tradeCache.size() << std::endl;
 	for (TradeCache::const_iterator itr = _tradeCache.begin(); itr != _tradeCache.end(); ++itr)
 	{
 		_tradeRecord = itr->second;

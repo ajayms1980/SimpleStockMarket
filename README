@@ -5,21 +5,22 @@ Notes:
 - You will need to provide CMAKE paths in CMakeLists.txt
 - Project_Area.JPG - Structure of All source and include files
 - SimpleStockMarket.pdf - Class Structure
-- Please note TradeID is created with <Sec since EPOCH + EPIC>. This is only for demonstration and lacks booking trades in microseconds.
-	In real scenario, you wouldn't like to do it. You will more robust ways like daycode + <Trade Sequence from Core Sequencer>
-
+- Please note TradeID is created with <Sec since EPOCH + <Counter> + EPIC>. This is only for demonstration and lacks issues like Fixed Format Trade ID which is crucial for Indexing at DB level storage.
+	In real scenario, you wouldn't like to do it. You will more robust ways like daycode + <Trade Sequence from Core Sequencer> with a Fixed Format.
+- Test_Results.txt demonstrates Output Run / Results. Please note that Rolling GBCE Index is same for all output because we are calculating Ratios after all trades have been booked. Code already takes care
+  of calculating GBCE Index based on Time Interval (Set to Current Time to pick all trades).
+- Changed PERatio calculation based on Dividend instead of Dividend Yield.
 
 Main.cpp
 - Main creates an object of StockMarketActivity which takes RefDataService, TradeService as input
 - You can then put orders in.
-- Sleep is to allow different Timestamp (More on this later)
 - getTradeData() will print all trade data.
-- getInstrumentRatio() will print all ratios like Div Yield, PE Ratio, VWAP and Index.
+- getInstrumentRatio() will print all ratios like Div Yield, PE Ratio, VWAP and Index for a given stock and price
 - Destroying StockMarketActivity will clean up memory.
 
 StockMarketActivity
 - It will take pointer to RefDataService, TradeService and create a new Instrument Service
-- Main methos is newOrderIn which will take orders from Main
+- newOrderIn which will take orders from Main
 - It will then validate and and call bookTrade from Trade Service
 - There are different helper functions to print Trades, refs , validate etc.
 

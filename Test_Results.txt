@@ -1,0 +1,121 @@
+	TRADES						Reference	Data			
+Epic	Quantity	Price	BuySell			Epic	Type	Last Div	Preffered Div	ParValue	
+ALE	2500	179	 NS::BUY			TEA	Common	0	0	100	
+ALE	200	185	 NS::SELL			POP	Common	8	0	100	
+ALE	400	164	 NS::BUY			ALE	Common	23	0	60	
+ALE	100	161	 NS::SELL			GIN	Preferred	8	2%	100	
+ALE	5000	172	 NS::BUY			JOE	Common	13	0	250	
+ALE	8000	159	 NS::SELL								
+							RESULTS			
+POP	500	240	 NS::BUY			========================================================================================
+POP	700	244	 NS::SELL			Epic	Price	Div Yield	PE Ratio	RollingVWAP	GBCE Index (All Trades)
+POP	900	241	 NS::BUY			ALE	160	0.14375		6.956		166.556		4.11341
+POP	600	236	 NS::SELL			POP	230	0.0347826	28.75		256.087	
+POP	1000	272	 NS::BUY			TEA	320	0		0		10.5096	
+POP	9000	259	 NS::SELL			JOE	450	0.0288889	34.6154		431.125	
+							GIN	12	0.166667	6		313.363					
+GIN	3500	311	 NS::BUY			========================================================================================					
+GIN	1000	305	 NS::SELL								
+GIN	700	326	 NS::BUY								
+GIN	300	335	 NS::SELL								
+GIN	200	312	 NS::BUY								
+GIN	80	333	 NS::SELL								
+											
+JOE	5000	432	 NS::BUY								
+JOE	1000	456	 NS::SELL								
+JOE	4000	422	 NS::BUY								
+JOE	1000	471	 NS::SELL								
+JOE	3000	411	 NS::BUY								
+JOE	2000	445	 NS::SELL								
+											
+TEA	500	11	 NS::BUY								
+TEA	400	10	 NS::SELL								
+TEA	900	15	 NS::BUY								
+TEA	10000	9	 NS::SELL								
+TEA	2000	12	 NS::BUY								
+TEA	8050	11.5	 NS::SELL								
+
+
+Output (simplestockmarket):
+===============================================================================================================
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/StockMarketSample # cmake .
+******  Machine is : x86_64
+-- Configuring done
+-- Generating done
+-- Build files have been written to: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/StockMarketSample
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/StockMarketSample # make 
+[ 10%] Building CXX object CMakeFiles/simplestockmarket.dir/src/main.cpp.o
+[ 20%] Building CXX object CMakeFiles/simplestockmarket.dir/src/IInstrument.cpp.o
+[ 30%] Building CXX object CMakeFiles/simplestockmarket.dir/src/InstrumentRatios.cpp.o
+[ 40%] Building CXX object CMakeFiles/simplestockmarket.dir/src/InstrumentRefDataService.cpp.o
+[ 50%] Building CXX object CMakeFiles/simplestockmarket.dir/src/IRefDataService.cpp.o
+[ 60%] Building CXX object CMakeFiles/simplestockmarket.dir/src/ITradeService.cpp.o
+[ 70%] Building CXX object CMakeFiles/simplestockmarket.dir/src/ReferenceDataMapping.cpp.o
+[ 80%] Building CXX object CMakeFiles/simplestockmarket.dir/src/StockMarketActivity.cpp.o
+[ 90%] Building CXX object CMakeFiles/simplestockmarket.dir/src/TradeRecord.cpp.o
+[100%] Building CXX object CMakeFiles/simplestockmarket.dir/src/TradeService.cpp.o
+Linking CXX executable simplestockmarket
+[100%] Built target simplestockmarket
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/StockMarketSample # ./simplestockmarket 
+InstrumentRefDataService: Creating Instrument RefDataCache
+Loading Reference Data......
+TradeService: Creating TradeService
+InstrumentRatios: Creating Instrument Ratios
+StockMarketActivity: Creating StockMarketActivity
+Trade Booked for Epic ALE[15216691481ALE] [2500@179 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic ALE[15216691482ALE] [200@185 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic ALE[15216691483ALE] [400@164 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic ALE[15216691484ALE] [100@161 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic ALE[15216691485ALE] [5000@172 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic ALE[15216691486ALE] [8000@159 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic POP[15216691487POP] [500@240 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic POP[15216691488POP] [700@244 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic POP[15216691489POP] [900@241 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic POP[152166914810POP] [600@236 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic POP[152166914811POP] [1000@272 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic POP[152166914812POP] [9000@259 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic GIN[152166914813GIN] [3500@311 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic GIN[152166914814GIN] [1000@305 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic GIN[152166914815GIN] [700@326 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic GIN[152166914816GIN] [300@335 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic GIN[152166914817GIN] [200@312 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic GIN[152166914818GIN] [80@333 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic JOE[152166914819JOE] [5000@432 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic JOE[152166914820JOE] [1000@456 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic JOE[152166914821JOE] [4000@422 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic JOE[152166914822JOE] [1000@471 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic JOE[152166914823JOE] [3000@411 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic JOE[152166914824JOE] [2000@445 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic TEA[152166914825TEA] [500@11 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic TEA[152166914826TEA] [400@10 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic TEA[152166914827TEA] [900@15 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic TEA[152166914828TEA] [10000@9 Sell ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic TEA[152166914829TEA] [2000@12 Buy ] Time [Wed Mar 21 21:52:28 2018]
+Trade Booked for Epic TEA[152166914830TEA] [8050@11.5 Sell ] Time [Wed Mar 21 21:52:28 2018]
+RefData: Epic ALE Common 23 0 60
+RefData: Epic GIN Preferred 8 2 100
+RefData: Epic JOE Common 13 0 250
+RefData: Epic POP Common 8 0 100
+RefData: Epic TEA Common 0 0 100
+****************Rolling Instrument Ratios [ALE] Price [160]   Div Yield:0.14375   PE Ratio:6.95652   Rolling VWAP:166.556   Rolling GBCE Index: 4.11341
+
+****************Rolling Instrument Ratios [POP] Price [230]   Div Yield:0.0347826   PE Ratio:28.75   Rolling VWAP:256.087   Rolling GBCE Index: 4.11341
+
+****************Rolling Instrument Ratios [TEA] Price [320]   Div Yield:0   PE Ratio:0   Rolling VWAP:10.5069   Rolling GBCE Index: 4.11341
+
+****************Rolling Instrument Ratios [JOE] Price [450]   Div Yield:0.0288889   PE Ratio:34.6154   Rolling VWAP:431.125   Rolling GBCE Index: 4.11341
+
+****************Rolling Instrument Ratios [GIN] Price [12]   Div Yield:0.166667   PE Ratio:6   Rolling VWAP:313.363   Rolling GBCE Index: 4.11341
+
+GBCE All Share Index: 4.11341
+StockMarketActivity: Destroying Instrument Service
+InstrumentRatios: Destroying Instrument Ratios
+StockMarketActivity: Destroying Trade Service
+TradeService: Destroying Trade Service
+TradeService: Destroyed Trade Service
+StockMarketActivity: Destroying Reference Data Service
+InstrumentRefDataService: Destroying Instrument RefDataCache
+InstrumentRefDataService: Destroyed Instrument RefDataCache
+StockMarketActivity: Destroyed  StockMarketActivity
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/StockMarketSample # 

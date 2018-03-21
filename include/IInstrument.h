@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   IInstrument.h
  * Author: ajay.kumar
  *
@@ -22,6 +22,7 @@ public:
 	virtual double getDividendYield(const std::string& epic, double price) = 0;
 	virtual double getPERatio(const std::string& epic, double price) = 0;
 	virtual double getRollingVWAP(const std::string& epic, int interval) = 0;
+	virtual double getDividend(const std::string& epic) = 0;
 } ;
 
 
